@@ -1,0 +1,30 @@
+# ============================================================
+# PROBOT-X v5.1 — Luxury Edition | Production Dependencies
+# Generated for Render.com deployment
+# ============================================================
+# Python 3.11+ recommended (Render's default Python 3.11 runtime works perfectly)
+# Standard-library modules (os, re, time, json, asyncio, logging, sqlite3,
+# unicodedata, datetime, pathlib, urllib.parse, random) are NOT listed here —
+# they ship with Python itself.
+# ------------------------------------------------------------
+
+# ─── Telegram MTProto client (core bot framework) ───────────
+# Telethon powers all bot handlers, callbacks, force-join checks,
+# message forwarding, and the StringSession userbot fallback.
+telethon>=1.36.0,<2.0.0
+
+# ─── Async HTTP server (web dashboard + /health JSON API) ───
+# Used by start_web() to serve the glassmorphism telemetry page
+# on Render's $PORT. aiohttp also powers the live /health endpoint.
+aiohttp>=3.9.0,<4.0.0
+
+# ─── .env loader ────────────────────────────────────────────
+# Reads API_ID, API_HASH, BOT_TOKEN, SESSION_STRING, ADMIN_IDS,
+# PORT from Render's environment variables (or local .env file).
+python-dotenv>=1.0.0,<2.0.0
+
+# ─── 7-day growth charts (optional — graceful fallback) ────
+# Generates the matplotlib PNG served by the 📊 Growth Chart
+# admin button. If unavailable, the bot returns a friendly
+# install-instruction message instead of crashing.
+matplotlib>=3.8.0,<4.0.0
